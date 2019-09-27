@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#Author: Russell Nyorere
+#Description: A script to check the size of a file
+#Date: 27/09/2019
+
+# Accept the file
+file=$1
+
+# Check file
+if [ "$file" == "" ]
+then
+	echo "Usage: ./check_size filepath"
+elif [ ! -e $file ]
+then
+	echo "The file does not exist"
+else
+	size=$(du -hs $file | cut --fields 1)
+	echo "The file size is $size"
+fi
