@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#Author: Russell Nyorere
+#Description: This script lists all the nested folders and files in a folder
+#Date: 27/09/2019
+
+
+# Accept the folder
+folder=$1
+
+# Check file
+if [ "$folder" == "" ]
+then
+	echo "Usage: ./check_size folder_path"
+elif [ ! -d $folder ]
+then
+	echo "The folder does not exist"
+else
+	ls -R $folder
+fi
