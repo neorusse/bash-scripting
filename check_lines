@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#Author: Russell Nyorere
+#Purpose: To count number of lines in a file
+#Date: 27/09/2019
+
+# Accept the file
+file=$1
+
+# Check file
+if [ "$file" == "" ]
+then
+	echo "Usage: ./check_lines filepath"
+elif [ ! -e $file ]
+then
+	echo "The file does not exist"
+else
+	lines=$(wc -l $file | cut -d " " --fields 1)
+	echo "There are $lines lines in the file"
+fi
+
